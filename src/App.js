@@ -1,7 +1,8 @@
-import './App.css';
+// import './App.css';
 import Wrapper from './components/Wrapper';
 import Header from './components/Header'; 
 import Main from './components/Main'
+import SearchBar from './components/Search'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
   <Header />
   <Main />
 </Wrapper>
+
   );
 }
 

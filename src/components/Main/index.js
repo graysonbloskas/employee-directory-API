@@ -1,11 +1,11 @@
 import React from 'react'
-import DataArea from './DataArea';
+import SearchBar from '../Search';
 
 
 function Main() {
     return (
         <div>
-            <DataArea />
+            <SearchBar />
         </div>
     )
 }
