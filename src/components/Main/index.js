@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import SearchBar from '../Search';
 import Data from '../Data';
-
+import API from '../../utils/API';
 
 function Main() {
     const [employees, setEmployees] = useState([]);
-    const [searchValue, setSearchValue] = useState('');
+    const [searchVal, setsearchVal] = useState('');
     const [sortOrder, setSortOrder] = useState(false);
 
     useEffect(() => {
-        api.getUsers().then((res) => setEmployees(res.data.results))
+        API.getUsers().then((res) => setEmployees(res.data.results))
     }, []);
 
     const handleInputChange = (e) => {
-        setSearchValue(e.target.value);
+        setsearchVal(e.target.value);
     };
 
     const handleSort = (e) => {
@@ -24,8 +24,8 @@ function Main() {
 
     return ( 
         <div>
-            <SearchBar handleInputChange={handleInputChange} value={searchValue} />
-            <Data employees={employees} handleSort={handleSort} searchValue={searchValue} />
+            <SearchBar handleInputChange={handleInputChange} value={searchVal} />
+            <Data employees={employees} handleSort={handleSort} searchVal={searchVal} />
         </div>
     )
 }
